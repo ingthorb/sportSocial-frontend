@@ -6,7 +6,7 @@ function HomePage() {
 		<div className='HomePage'>
 			<header className='HomePage-header'>
 				<h1>Sport Social</h1>
-				<p>Homepage for people that want to meetup and play some sports.</p>
+				<p>Homepage for people that want to meet and play some sports.</p>
 			</header>
 		</div>
 	);
