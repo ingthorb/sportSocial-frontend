@@ -5,26 +5,26 @@ import { BrowserRouter as Router, NavLink } from "react-router-dom";
 function Sidebar() {
 	return (
 		<div className='Sidebar'>
-			<h1 class='sidenav__header'>
+			<h1 className='sidenav__header'>
 				<NavLink to={"/"}>Sport Social</NavLink>
 			</h1>
-			<ul class='sidenav__list'>
-				<li class='sidenav__list-item'>
-					<NavLink class='sidenav__link-item' to={"/events"}>
+			<ul className='sidenav__list'>
+				<li className='sidenav__list-item'>
+					<NavLink className='sidenav__link-item' to={"/events"}>
 						Events
-						<i class='fas fa-calendar-day'></i>
+						<i className='fas fa-calendar-day'></i>
 					</NavLink>
 				</li>
-				<li class='sidenav__list-item'>
-					<NavLink class='sidenav__link-item' to={"/sports"}>
+				<li className='sidenav__list-item'>
+					<NavLink className='sidenav__link-item' to={"/sports"}>
 						Sports
-						<i class='fas fa-running'></i>
+						<i className='fas fa-running'></i>
 					</NavLink>{" "}
 				</li>
-				<li class='sidenav__list-item'>
-					<NavLink class='sidenav__link-item' to={"/users"}>
-						Users
-						<i class='fas fa-users'></i>
+				<li className='sidenav__list-item'>
+					<NavLink className='sidenav__link-item' to={"/groups"}>
+						Groups
+						<i className='fas fa-users'></i>
 					</NavLink>{" "}
 				</li>
 			</ul>
@@ -32,4 +32,4 @@ function Sidebar() {
 	);
 }
 
-export default withRouter(Sidebar);
+export default Sidebar;

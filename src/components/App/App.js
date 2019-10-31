@@ -7,15 +7,15 @@ import Sidebar from "../Sidebar/Sidebar";
 
 function App() {
 	return (
-		<div class='grid-container'>
+		<div className='grid-container'>
 			<Router>
-				<header class='header'>
+				<header className='header'>
 					<Navbar />
 				</header>
-				<aside class='sidenav'>
+				<aside className='sidenav'>
 					<Sidebar />
 				</aside>
-				<main class='main'>
+				<main className='main'>
 					<Routes />
 				</main>
 			</Router>
