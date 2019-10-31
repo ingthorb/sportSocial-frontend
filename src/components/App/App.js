@@ -8,19 +8,17 @@ import Sidebar from "../Sidebar/Sidebar";
 function App() {
 	return (
 		<div class='grid-container'>
-			<header class='header'>
-				<Navbar />
-			</header>
-			<aside class='sidenav'>
-				<Router>
+			<Router>
+				<header class='header'>
+					<Navbar />
+				</header>
+				<aside class='sidenav'>
 					<Sidebar />
-				</Router>
-			</aside>
-			<main class='main'>
-				<Router>
+				</aside>
+				<main class='main'>
 					<Routes />
-				</Router>
-			</main>
+				</main>
+			</Router>
 		</div>
 	);
 }

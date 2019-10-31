@@ -10,13 +10,30 @@
 	margin-top: 85px;
 	list-style-type: none;
 }
+
+a {
+	text-decoration: none;
+	color: white;
+}
+
+.sidenav__link-item:active,
+:visited,
+:hover,
+:visited {
+	text-decoration: none;
+	color: white;
+}
+
 .sidenav__list-item {
 	padding: 20px 20px 20px 40px;
 	color: #ddd;
+	text-decoration: none;
 }
 .sidenav__list-item:hover {
 	background-color: rgba(255, 255, 255, 0.2);
 	cursor: pointer;
+	font-weight: bold;
+	text-decoration: none;
 }
 
 .sidenav__header a {

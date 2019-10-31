@@ -1,6 +1,7 @@
 import React from "react";
 import "./Sidebar.css";
-import { NavLink } from "react-router-dom";
+import { withRouter } from "react-router";
+import { BrowserRouter as Router, NavLink } from "react-router-dom";
 function Sidebar() {
 	return (
 		<div className='Sidebar'>
@@ -9,17 +10,26 @@ function Sidebar() {
 			</h1>
 			<ul class='sidenav__list'>
 				<li class='sidenav__list-item'>
-					Events <i class='fas fa-calendar-day'></i>
+					<NavLink class='sidenav__link-item' to={"/events"}>
+						Events
+						<i class='fas fa-calendar-day'></i>
+					</NavLink>
 				</li>
 				<li class='sidenav__list-item'>
-					Sports <i class='fas fa-running'></i>
+					<NavLink class='sidenav__link-item' to={"/sports"}>
+						Sports
+						<i class='fas fa-running'></i>
+					</NavLink>{" "}
 				</li>
 				<li class='sidenav__list-item'>
-					Users <i class='fas fa-users'></i>
+					<NavLink class='sidenav__link-item' to={"/users"}>
+						Users
+						<i class='fas fa-users'></i>
+					</NavLink>{" "}
 				</li>
 			</ul>
 		</div>
 	);
 }
 
-export default Sidebar;
+export default withRouter(Sidebar);
