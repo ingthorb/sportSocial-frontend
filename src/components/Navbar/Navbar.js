@@ -1,13 +1,13 @@
-import React from "react";
+import React, { Component } from "react";
 import "./Navbar.css";
 
-function Navbar() {
-	return (
-		<div className='Navbar'>
-			<p>Search</p>
-			<p>User</p>
-		</div>
-	);
+export default class Navbar extends Component {
+	render() {
+		return (
+			<div className='Navbar'>
+				<input placeholder='Search'></input>
+				<p>Date today.. For now until users Find out how to set</p>
+			</div>
+		);
+	}
 }
-
-export default Navbar;

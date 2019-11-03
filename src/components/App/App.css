@@ -24,5 +24,6 @@
 
 .main {
 	grid-area: main;
-	background-color: #8fd4d9;
+	color: black;
+	background-color: whitesmoke;
 }

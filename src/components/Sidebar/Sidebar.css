@@ -16,14 +16,6 @@ a {
 	color: white;
 }
 
-.sidenav__link-item:active,
-:visited,
-:hover,
-:visited {
-	text-decoration: none;
-	color: white;
-}
-
 .sidenav__list-item {
 	padding: 20px 20px 20px 40px;
 	color: #ddd;
