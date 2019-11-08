@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./Groups.css";
-import axios from "axios";
+import axiosConfig from "../../utils/Axios/axiosConfig";
 
 export default class Groups extends Component {
 	constructor(props) {
@@ -9,24 +9,15 @@ export default class Groups extends Component {
 	}
 
 	componentDidMount() {
-		// Set the defaults for the axios requests
-		axios.defaults.xsrfCookieName = "csrftoken";
-		axios.defaults.xsrfHeaderName = "X-CSRFTOKEN";
-		axios.defaults.headers.post["Access-Control-Allow-Origin"] = "*";
-
-		// Figure out axios default header config file settings
-		axios
-			.get(`http://127.0.0.1:8000/groups`)
+		axiosConfig
+			.get(`/groups/`)
 			.then(res => {
-				console.log(res);
-				const groups = res.data;
+				const groups = res.data.results;
 				this.setState({ groups });
 			})
 			.catch(error => {
 				console.log(error);
 			});
-
-		// Create a modal for creating a new group
 	}
 	render() {
 		return (

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./Events.css";
-import axios from "axios";
+import axiosConfig from "../../utils/Axios/axiosConfig";
 
 export default class Events extends Component {
 	constructor(props) {
@@ -9,17 +9,10 @@ export default class Events extends Component {
 	}
 
 	componentDidMount() {
-		// Set the defaults for the axios requests
-		axios.defaults.xsrfCookieName = "csrftoken";
-		axios.defaults.xsrfHeaderName = "X-CSRFTOKEN";
-		axios.defaults.headers.post["Access-Control-Allow-Origin"] = "*";
-
-		// Figure out axios default header config file settings
-		axios
-			.get(`http://127.0.0.1:8000/events`)
+		axiosConfig
+			.get(`/events/`)
 			.then(res => {
-				console.log(res);
-				const events = res.data;
+				const events = res.data.results;
 				this.setState({ events });
 			})
 			.catch(error => {
