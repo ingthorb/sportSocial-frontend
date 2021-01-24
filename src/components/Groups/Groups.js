@@ -24,12 +24,23 @@ export default class Groups extends Component {
 			<div className='Groups'>
 				<header className='Groups-header'>
 					<h1>Groups</h1>
-					<p>Temp for Groups</p>
 				</header>
 				<div>
 					<h4>
 						Have cards with Groups with the header is the: (City in Country)
 					</h4>
+					<div>
+					{this.state.groups.map(function(group, idx){
+						return (
+						<div key={idx}>
+						<h2>{group.country}</h2>
+						<li>
+							{group.name}
+							<ul>{group.description}</ul>
+						</li>
+						</div>)
+					})}
+				</div>
 				</div>
 			</div>
 		);

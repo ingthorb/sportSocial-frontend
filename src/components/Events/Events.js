@@ -14,6 +14,7 @@ export default class Events extends Component {
 			.then(res => {
 				const events = res.data.results;
 				this.setState({ events });
+				console.log(events);
 			})
 			.catch(error => {
 				console.log(error);
@@ -29,10 +30,13 @@ export default class Events extends Component {
 					<h1>Events</h1>
 				</header>
 				<div>
-					<ul>
-						<li> Football in Bern</li>
-						<li> Volleyball in Bern</li>
-					</ul>
+					{this.state.events.map(function(event, idx){
+						return (
+						<li key={idx}>
+							{event.name}
+							<ul>{event.description}</ul>
+						</li>)
+					})}
 				</div>
 			</div>
 		);
