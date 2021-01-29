@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import "./Groups.css";
 import axiosConfig from "../../utils/Axios/axiosConfig";
+import Card from 'react-bootstrap/Card';
+import CardDeck from 'react-bootstrap/CardDeck';
+
 
 export default class Groups extends Component {
 	constructor(props) {
@@ -13,6 +16,7 @@ export default class Groups extends Component {
 			.get(`/groups/`)
 			.then(res => {
 				const groups = res.data.results;
+				console.log(groups);
 				this.setState({ groups });
 			})
 			.catch(error => {
@@ -26,20 +30,26 @@ export default class Groups extends Component {
 					<h1>Groups</h1>
 				</header>
 				<div>
-					<h4>
-						Have cards with Groups with the header is the: (City in Country)
+					<h4 className="header-groups">
+						Here are all groups that are available, to view the group click on the card.
 					</h4>
 					<div>
-					{this.state.groups.map(function(group, idx){
-						return (
-						<div key={idx}>
-						<h2>{group.country}</h2>
-						<li>
-							{group.name}
-							<ul>{group.description}</ul>
-						</li>
-						</div>)
-					})}
+					<CardDeck>
+						{this.state.groups.map(function(group, idx){
+							return (
+									<Card key={idx} border="secondary" style={{ width: '18rem' }}>
+										<Card.Body>
+											<Card.Title>{group.name}</Card.Title>
+											<Card.Subtitle className="mb-2 text-muted">{group.country_name}</Card.Subtitle>
+											<Card.Subtitle className="mb-2 text-muted">Users: {group.users.length}</Card.Subtitle>
+											<Card.Text>
+												{group.description}
+											</Card.Text>
+										</Card.Body>
+									</Card>
+								)
+							})}
+					</CardDeck>
 				</div>
 				</div>
 			</div>
