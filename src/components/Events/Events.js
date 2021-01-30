@@ -50,6 +50,7 @@ export default class Events extends Component {
 									<Card key={idx} border="secondary" style={{ width: '18rem' }}>
 										<Card.Body>
 											<Card.Title>{event.name}</Card.Title>
+											<Card.Subtitle className="mb-2 text-muted">{event.datetime}</Card.Subtitle>
 											<Card.Subtitle className="mb-2 text-muted">{event.country_name}</Card.Subtitle>
 											<Card.Subtitle className="mb-2 text-muted">Users: {event.users.length}</Card.Subtitle>
 											<Card.Text>

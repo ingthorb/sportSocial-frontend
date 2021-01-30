@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "./HomePage.css";
 import axiosConfig from "../../utils/Axios/axiosConfig";
+import Card from 'react-bootstrap/Card';
+import CardDeck from 'react-bootstrap/CardDeck';
 
 export default class HomePage extends Component {
 	constructor(props) {
@@ -61,9 +63,17 @@ export default class HomePage extends Component {
 					<div>
 						<h6> Countries where you can find events</h6>
 						<div>
-							{this.state.countries.map(function(country, idx){
-								return (<li key={idx}>{country.name}</li>)
+						<CardDeck>
+						{this.state.countries.map(function(country, idx){
+							return (
+									<Card key={idx} border="secondary" style={{ 'min-width': '18rem', 'marginBottom': '10px'}}>
+										<Card.Body>
+											<Card.Title>{country.name}</Card.Title>
+										</Card.Body>
+									</Card>
+								)
 							})}
+					</CardDeck>
 						</div>
 					</div>
 				</div>
