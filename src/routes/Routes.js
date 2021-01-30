@@ -4,6 +4,7 @@ import NotFound from "../components/NotFound/NotFound";
 import Sports from "../components/Sports/Sports";
 import Events from "../components/Events/Events";
 import Groups from "../components/Groups/Groups";
+import GroupDetail from "../components/GroupDetail/GroupDetail"
 import { Route, Switch } from "react-router-dom";
 
 export const Routes = () => {
@@ -14,6 +15,7 @@ export const Routes = () => {
 				<Route exact path='/sports' component={Sports} />
 				<Route exact path='/events' component={Events} />
 				<Route exact path='/groups' component={Groups} />
+				<Route exact path='/groups/:id' component={GroupDetail} />
 				<Route component={NotFound} />
 			</Switch>
 		</div>
