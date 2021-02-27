@@ -9,9 +9,9 @@ Will be possible to find events, groups based on countries or cities.
 Will be deployed with Heroku
 ## Staging Environment
 
-www.staging.sportsocial.is
+http://staging.sportsocial.is/
 
 
 ## Production
 
-www.sportsocial.is
+http://sportsocial.is
