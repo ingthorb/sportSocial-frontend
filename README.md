@@ -8,4 +8,4 @@ Will be possible to find events, groups based on countries or cities.
 
 Will be deployed with Heroku
 
-Coming soon on sportsocial.is
+Live on sportsocial.is
