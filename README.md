@@ -7,5 +7,11 @@ The backend for the API data is https://sport-social.herokuapp.com/
 Will be possible to find events, groups based on countries or cities.
 
 Will be deployed with Heroku
+## Staging Environment
 
-Live on sportsocial.is
+www.staging.sportsocial.is
+
+
+## Production
+
+www.sportsocial.is
