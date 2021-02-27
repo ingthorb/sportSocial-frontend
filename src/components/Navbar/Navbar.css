@@ -2,7 +2,11 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: 0 16px;
+	padding: 0 10px 10px;
 	background-color: #648ca6;
 	color: white;
+}
+
+.DateToday {
+	margin: 10px 10px;
 }

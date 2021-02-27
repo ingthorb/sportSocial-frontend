@@ -10,8 +10,6 @@ export default class Navbar extends Component {
 		// let users = this.users;
 		const date = new Date();
 		var day = date.toLocaleString('en-GB',{month:'long', year:'numeric', day:'numeric'});
-		console.log(day);
-		console.log('This is the day');
 		this.setState({ day });
 		// Update with redux
 	}
@@ -20,7 +18,7 @@ export default class Navbar extends Component {
 		return (
 			<div className='Navbar'>
 				<input placeholder='Search'></input>
-				<p>{this.state.day}</p>
+				<h4 className="DateToday">{this.state.day}</h4>
 			</div>
 		);
 	}

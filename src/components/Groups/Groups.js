@@ -12,6 +12,9 @@ export default class Groups extends Component {
 	}
 
 	componentDidMount() {
+		console.log(axiosConfig.baseURL);
+		console.log('The env var');
+		console.log(process.env.REACT_APP_BASEURL);
 		axiosConfig
 			.get(`/groups/`)
 			.then(res => {
