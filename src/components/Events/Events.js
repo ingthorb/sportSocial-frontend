@@ -47,7 +47,8 @@ export default class Events extends Component {
 				<CardDeck>
 						{this.state.events.map(function(event, idx){
 							return (
-									<Card key={idx} border="secondary" style={{ width: '18rem' }}>
+								// How do I do a if command in React?
+									<Card key={idx} border="secondary" style={{ width: '18rem' }} if={event.private.toString()}>
 										<Card.Body>
 											<Card.Title>{event.name}</Card.Title>
 											<Card.Subtitle className="mb-2 text-muted">{event.datetime}</Card.Subtitle>

@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Groups from "./GroupDetail";
+import Sports from "./SportDetails";
 
 it("renders without crashing", () => {
 	const div = document.createElement("div");
-	ReactDOM.render(<Groups />, div);
+	ReactDOM.render(<Sports />, div);
 	ReactDOM.unmountComponentAtNode(div);
 });
