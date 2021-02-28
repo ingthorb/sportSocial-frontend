@@ -14,4 +14,5 @@ http://staging.sportsocial.is/
 
 ## Production
 After testing and veryfing it works on the staging environment then there must be a pull request from develop to master branch. After the pull request is accepted it will be deployed to production.
+
 http://sportsocial.is
