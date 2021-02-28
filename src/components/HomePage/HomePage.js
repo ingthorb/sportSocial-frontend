@@ -66,7 +66,7 @@ export default class HomePage extends Component {
 						<CardDeck>
 						{this.state.countries.map(function(country, idx){
 							return (
-									<Card key={idx} border="secondary" style={{ 'min-width': '18rem', 'marginBottom': '10px'}}>
+									<Card key={idx} border="secondary" style={{ 'minWidth': '18rem', 'marginBottom': '10px'}}>
 										<Card.Body>
 											<Card.Title>{country.name}</Card.Title>
 										</Card.Body>

@@ -32,7 +32,7 @@ export default class Sports extends Component {
 					<CardDeck>
 						{this.state.sports.map(function(sport, idx){
 							return (
-									<Card key={idx} border="secondary" style={{ 'min-width': '18rem', 'marginBottom': '10px'}}>
+									<Card key={idx} border="secondary" style={{ 'minWidth': '18rem', 'marginBottom': '10px'}}>
 										<Card.Body>
 											<Card.Title>{sport.name}</Card.Title>
 											<Card.Text>

@@ -12,11 +12,13 @@ export default class Groups extends Component {
 	}
 
 	componentDidMount() {
+		console.log(axiosConfig.baseURL);
+		console.log('The env var');
+		console.log(process.env.REACT_APP_BASEURL);
 		axiosConfig
 			.get(`/groups/`)
 			.then(res => {
 				const groups = res.data.results;
-				console.log(groups);
 				this.setState({ groups });
 			})
 			.catch(error => {
@@ -41,7 +43,7 @@ export default class Groups extends Component {
 										<Card.Body>
 											<Card.Title>{group.name}</Card.Title>
 											<Card.Subtitle className="mb-2 text-muted">{group.country_name}</Card.Subtitle>
-											<Card.Subtitle className="mb-2 text-muted">Users: {group.users.length}</Card.Subtitle>
+											<Card.Subtitle className="mb-2 text-muted">Users: {group.users}</Card.Subtitle>
 											<Card.Text>
 												{group.description}
 											</Card.Text>
