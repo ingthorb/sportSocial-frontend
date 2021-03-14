@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import "./HomePage.css";
+import { makeStyles } from '@material-ui/core/styles';
+
 import axiosConfig from "../../utils/Axios/axiosConfig";
 import Card from 'react-bootstrap/Card';
 import CardDeck from 'react-bootstrap/CardDeck';
@@ -32,7 +34,7 @@ export default class HomePage extends Component {
 			});
 	}
 
-	listOfUsers(){
+	listOfUsers() {
 		axiosConfig
 			.get(`/users/`)
 			.then(res => {
