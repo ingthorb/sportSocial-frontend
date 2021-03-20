@@ -1,17 +1,16 @@
 import React, { Component } from "react";
 import "./HomePage.css";
-import { makeStyles } from '@material-ui/core/styles';
-
+import { makeStyles } from "@material-ui/core/styles";
 import axiosConfig from "../../utils/Axios/axiosConfig";
-import Card from 'react-bootstrap/Card';
-import CardDeck from 'react-bootstrap/CardDeck';
 
-export default class HomePage extends Component {
-	constructor(props) {
-		super(props);
-		this.state = { users: 0,
-						countries: [] };
-	}
+type Props = {};
+
+type State = {
+	users: 0;
+	countries: [];
+};
+
+export default class HomePage extends React.Component<Props, State> {
 	componentDidMount() {
 		// let users = this.users;
 		const users = 0;
@@ -24,12 +23,12 @@ export default class HomePage extends Component {
 	listOfCountries() {
 		axiosConfig
 			.get(`/countries/`)
-			.then(res => {
+			.then((res) => {
 				const countries = res.data.results;
 				this.setState({ countries });
 				console.log(countries);
 			})
-			.catch(error => {
+			.catch((error) => {
 				console.log(error);
 			});
 	}
@@ -37,12 +36,12 @@ export default class HomePage extends Component {
 	listOfUsers() {
 		axiosConfig
 			.get(`/users/`)
-			.then(res => {
+			.then((res) => {
 				const usersList = res.data.results;
 				let users = usersList.length;
-				this.setState({ users })
+				this.setState({ users });
 			})
-			.catch(error => {
+			.catch((error) => {
 				console.log(error);
 			});
 	}
@@ -51,7 +50,7 @@ export default class HomePage extends Component {
 			<div className='HomePage'>
 				<div className='HomePage-header'>
 					<h1>Sport Social Check for font awesome</h1>
-					<h4>Number of users: {this.state.users}</h4>
+					<h4>Number of users: 0</h4>
 					<p>Homepage for people that want to meet and play some sports.</p>
 
 					<div>
@@ -65,17 +64,21 @@ export default class HomePage extends Component {
 					<div>
 						<h6> Countries where you can find events</h6>
 						<div>
-						<CardDeck>
-						{this.state.countries.map(function(country, idx){
-							return (
-									<Card key={idx} border="secondary" style={{ 'minWidth': '18rem', 'marginBottom': '10px'}}>
-										<Card.Body>
-											<Card.Title>{country.name}</Card.Title>
-										</Card.Body>
-									</Card>
-								)
-							})}
-					</CardDeck>
+							{/* <CardDeck>
+								{this.state.countries.map(function (country, idx) {
+									return (
+										<Card
+											key={idx}
+											border='secondary'
+											style={{ minWidth: "18rem", marginBottom: "10px" }}
+										>
+											<Card.Body>
+												<Card.Title>{country.name}</Card.Title>
+											</Card.Body>
+										</Card>
+									);
+								})}
+							</CardDeck> */}
 						</div>
 					</div>
 				</div>
