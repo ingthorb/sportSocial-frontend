@@ -24,7 +24,7 @@ export default class App extends Component {
 					<main className='main'>
 						<Routes />
 					</main>
-					<Footer title="" social={social} description="For more information contact ingthorb@gmail.com" />
+					<Footer social={social} description="For more information contact ingthorb@gmail.com" />
 				</Router>
 			</div>
 		);

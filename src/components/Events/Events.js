@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import "./Events.css";
 import axiosConfig from "../../utils/Axios/axiosConfig";
+import { format } from "date-fns";
 import Card from 'react-bootstrap/Card';
 import CardDeck from 'react-bootstrap/CardDeck';
-import { format } from "date-fns";
-
 
 export default class Events extends Component {
 	constructor(props) {
