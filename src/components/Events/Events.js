@@ -49,12 +49,14 @@ export default class Events extends Component {
 				<Card className="event-card-header">
 					<Card.Body>
 					<Card.Text>
-						Here are all events that are happening around you in the next few days.
+						Here are all events that are happening around you in the next few days. When creating a Event you can make it private so it's an invite only.
 					</Card.Text>
 					</Card.Body>
 				</Card>
 
-
+				{this.state.loading &&( 
+					<CircularProgress className="spinner" /> 
+				)}
 				<CardDeck>
 						{this.state.events.map(function(event, idx){
 							if(event.private){

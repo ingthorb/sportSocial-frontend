@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./HomePage.css";
-import { makeStyles } from '@material-ui/core/styles';
 import Button from 'react-bootstrap/Button';
 import axiosConfig from "../../utils/Axios/axiosConfig";
 import Card from 'react-bootstrap/Card';
@@ -70,7 +69,7 @@ export default class HomePage extends Component {
 									<Card key={idx} border="secondary" style={{ 'minWidth': '18rem', 'marginBottom': '10px'}}>
 										<Card.Body>
 											<Card.Title>{country.name}</Card.Title>
-											<Button variant="primary" href="#">Find Events</Button>
+											<Button variant="primary" href="/events/">Find Events</Button>
 										</Card.Body>
 									</Card>
 								)

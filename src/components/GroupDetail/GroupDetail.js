@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import "./GroupDetail.css";
 import axiosConfig from "../../utils/Axios/axiosConfig";
-import Card from 'react-bootstrap/Card';
 import SimpleList from "../SimpleList/SimpleList";
+import LocationCityIcon from '@material-ui/icons/LocationCity';
 
 
 export default class GroupDetail extends Component {
@@ -32,13 +32,14 @@ export default class GroupDetail extends Component {
 					<h1>{this.state.group.name}</h1>
 				</header>
 				<div>
-					<h4 className="header-groups">
-						Detail of the group
-					</h4>
+				<h4><LocationCityIcon/>Country: {this.state.group.country_name}</h4>
+
 					<div>
 					<p>{this.state.group.description}</p>
 					<h5>Users:</h5>
-					<SimpleList></SimpleList>
+					{this.state.group.users &&(
+						<SimpleList users={this.state.group.users}></SimpleList>
+					)}
 				</div>
 				</div>
 			</div>

@@ -37,9 +37,12 @@ export default class Groups extends Component {
 				</header>
 				<div>
 					<h4 className="header-groups">
-						Here are all groups that are available, to view the group click on the card.
+						Here are all groups that are available, to view the group click on the card.When creating a Group you can make it private so it's an invite only.
 					</h4>
 				</div>
+				{this.state.loading &&( 
+					<CircularProgress className="spinner" /> 
+				)}
 				<CardDeck>
 					{this.state.groups.map(function(group, idx){
 						return (

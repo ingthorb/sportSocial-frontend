@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import axiosConfig from "../../utils/Axios/axiosConfig";
-import Card from 'react-bootstrap/Card';
-import CardDeck from 'react-bootstrap/CardDeck';
 
 export default class SportDetails extends Component {
 	constructor(props) {
@@ -21,7 +19,6 @@ export default class SportDetails extends Component {
 			});
 		// Create a modal for creating a new sport
 	}
-	// Find a way to limit the Carddeck to maximum size of something and mininum widht of 18rem
 	render() {
 		return (
 			<div className='Sports'>

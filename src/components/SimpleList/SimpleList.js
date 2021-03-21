@@ -27,12 +27,14 @@ export default function SimpleList(props) {
   return (
     <div className={classes.root}>
       <List component="nav" aria-label="Users">
-        <ListItem button>
+      {users.map((user) => (
+          <ListItem key={user}>
           <ListItemIcon>
             <PersonIcon />
           </ListItemIcon>
-          <ListItemText primary="Users" />
+          <ListItemText primary={user} />
         </ListItem>
+        ))}  
       </List>
       <Divider />
     </div>

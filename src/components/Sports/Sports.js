@@ -4,6 +4,7 @@ import axiosConfig from "../../utils/Axios/axiosConfig";
 import Card from 'react-bootstrap/Card';
 import CardDeck from 'react-bootstrap/CardDeck';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import Button from 'react-bootstrap/Button';
 
 export default class Sports extends Component {
 	constructor(props) {
@@ -53,6 +54,7 @@ export default class Sports extends Component {
 											<Card.Text>
 												{sport.description}
 											</Card.Text>
+											<Button variant="primary" href={ '/events/'}>See Events</Button>
 										</Card.Body>
 									</Card>
 								)
