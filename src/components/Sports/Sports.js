@@ -16,14 +16,16 @@ export default class Sports extends Component {
 			.then(res => {
 				const sports = res.data.results;
 				this.setState({ sports });
+				console.log(sports);
 			})
 			.catch(error => {
 				console.log(error);
 			});
-		// Create a modal for creating a new sport
+
 	}
-	// Find a way to limit the Carddeck to maximum size of something and mininum widht of 18rem
+
 	render() {
+ 
 		return (
 			<div className='Sports'>
 				<header className='Sports-header'>
