@@ -50,8 +50,7 @@ export default class HomePage extends Component {
 		return (
 			<div className='HomePage'>
 				<div className='HomePage-header'>
-					<h1>Sport Social Check for font awesome</h1>
-					<h4>Number of users: {this.state.users}</h4>
+					<h2>Number of users: {this.state.users}</h2>
 					<p>Homepage for people that want to meet and play some sports.</p>
 
 					<div>
@@ -63,7 +62,7 @@ export default class HomePage extends Component {
 					</div>
 
 					<div>
-						<h6> Countries where you can find events</h6>
+						<h3> Countries where you can find events</h3>
 						<div>
 						<CardDeck>
 						{this.state.countries.map(function(country, idx){

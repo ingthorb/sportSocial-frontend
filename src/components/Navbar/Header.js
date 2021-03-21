@@ -7,6 +7,7 @@ import IconButton from '@material-ui/core/IconButton';
 import SearchIcon from '@material-ui/icons/Search';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
+import "./Header.css";
 import { NavLink } from "react-router-dom";
 
 const sections = [
@@ -50,7 +51,7 @@ export default function Header(props) {
           noWrap
           className={classes.toolbarTitle}
         >
-          <NavLink className="titleHeader" to={"/"}>{title}</NavLink>
+          <NavLink id="titleHeader" to={"/"}>{title}</NavLink>
         </Typography>
 
         <Button variant="outlined" size="small">

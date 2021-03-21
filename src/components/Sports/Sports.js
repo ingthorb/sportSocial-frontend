@@ -3,20 +3,25 @@ import "./Sports.css";
 import axiosConfig from "../../utils/Axios/axiosConfig";
 import Card from 'react-bootstrap/Card';
 import CardDeck from 'react-bootstrap/CardDeck';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 export default class Sports extends Component {
 	constructor(props) {
 		super(props);
-		this.state = { sports: [] };
+		this.state = { 
+			sports: [],
+			loading: false 
+		};
 	}
 
 	componentDidMount() {
+		this.setState({loading:true})
 		axiosConfig
 			.get(`/sports/`)
 			.then(res => {
 				const sports = res.data.results;
-				this.setState({ sports });
-				console.log(sports);
+				this.setState({loading:false});
+				this.setState({ sports });	
 			})
 			.catch(error => {
 				console.log(error);
@@ -25,12 +30,20 @@ export default class Sports extends Component {
 	}
 
 	render() {
- 
 		return (
 			<div className='Sports'>
 				<header className='Sports-header'>
 					<h1>Sports</h1>
-					<h4>Here are all sports thate are available to find events. Click on the sport you want to attend to a event and look at all the events close to you.</h4>
+				</header>
+				<div>
+					<h4 className="header-groups">
+					Here are all sports thate are available to find events. Click on the sport you want to attend to a event and look at all the events close to you.
+					</h4>
+				</div>
+
+					{this.state.loading &&( 
+						<CircularProgress className="spinner" /> 
+					)}
 					<CardDeck>
 						{this.state.sports.map(function(sport, idx){
 							return (
@@ -44,9 +57,7 @@ export default class Sports extends Component {
 									</Card>
 								)
 							})}
-					</CardDeck>
-				</header>
-			</div>
+					</CardDeck>			</div>
 		);
 	}
 }

@@ -4,20 +4,25 @@ import axiosConfig from "../../utils/Axios/axiosConfig";
 import { format } from "date-fns";
 import Card from 'react-bootstrap/Card';
 import CardDeck from 'react-bootstrap/CardDeck';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 export default class Events extends Component {
 	constructor(props) {
 		super(props);
-		this.state = { events: [] };
+		this.state = { 
+			events: [],
+			loading: false 
+		};
 	}
 
 	componentDidMount() {
+		this.setState({loading:true})
 		axiosConfig
 			.get(`/events/`)
 			.then(res => {
 				const events = res.data.results;
+				this.setState({loading:false});
 				this.setState({ events });
-				console.log(events);
 			})
 			.catch(error => {
 				console.log(error);
