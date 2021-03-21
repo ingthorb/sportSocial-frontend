@@ -4,6 +4,7 @@ import axiosConfig from "../../utils/Axios/axiosConfig";
 import { format } from "date-fns";
 import Card from 'react-bootstrap/Card';
 import CardDeck from 'react-bootstrap/CardDeck';
+import Button from 'react-bootstrap/Button';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
 export default class Events extends Component {
@@ -67,6 +68,8 @@ export default class Events extends Component {
 												<Card.Text>
 													{event.description}
 												</Card.Text>
+												
+												<Button variant="primary" href={ '/events/' + event.id }>View Event Details</Button>
 											</Card.Body>
 										</Card>
 									)

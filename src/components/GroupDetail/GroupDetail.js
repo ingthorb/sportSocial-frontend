@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./GroupDetail.css";
 import axiosConfig from "../../utils/Axios/axiosConfig";
 import Card from 'react-bootstrap/Card';
+import SimpleList from "../SimpleList/SimpleList";
 
 
 export default class GroupDetail extends Component {
@@ -11,10 +12,12 @@ export default class GroupDetail extends Component {
 	}
 
 	componentDidMount() {
+		console.log(this.props.match.params.id);
 		axiosConfig
 			.get(`/groups/${this.props.match.params.id}`)
 			.then(res => {
-				const group = res.data.results;
+				console.log(res);
+				const group = res.data;
 				console.log(group);
 				this.setState({ group });
 			})
@@ -33,14 +36,9 @@ export default class GroupDetail extends Component {
 						Detail of the group
 					</h4>
 					<div>
-						<Card border="secondary" style={{ width: '18rem' }}>
-							<Card.Body>
-								<Card.Title>{this.state.group.name}</Card.Title>
-								<Card.Text>
-									{this.state.group.description}
-								</Card.Text>
-							</Card.Body>
-						</Card>
+					<p>{this.state.group.description}</p>
+					<h5>Users:</h5>
+					<SimpleList></SimpleList>
 				</div>
 				</div>
 			</div>

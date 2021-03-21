@@ -4,6 +4,7 @@ import axiosConfig from "../../utils/Axios/axiosConfig";
 import Card from 'react-bootstrap/Card';
 import CardDeck from 'react-bootstrap/CardDeck';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import Button from 'react-bootstrap/Button';
 
 
 export default class Groups extends Component {
@@ -50,6 +51,7 @@ export default class Groups extends Component {
 										<Card.Text>
 											{group.description}
 										</Card.Text>
+										<Button variant="primary" href={ '/groups/' + group.id }>See Details</Button>
 									</Card.Body>
 								</Card>
 							)
