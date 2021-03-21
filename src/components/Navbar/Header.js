@@ -50,7 +50,7 @@ export default function Header(props) {
           noWrap
           className={classes.toolbarTitle}
         >
-          <NavLink to={"/"}>{title}</NavLink>
+          <NavLink className="titleHeader" to={"/"}>{title}</NavLink>
         </Typography>
 
         <Button variant="outlined" size="small">
