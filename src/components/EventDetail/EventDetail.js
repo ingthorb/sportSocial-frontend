@@ -39,7 +39,7 @@ export default class EventDetail extends Component {
 				<div>
 					<h4><LocationCityIcon/>City: {this.state.event.city_name}</h4>
 					<h4><DirectionsRunIcon/>Difficulty: {this.state.event.difficulty}</h4>
-					<h4><SportsIcon/>Sport: {this.state.event.sport_name}</h4>
+					<h4><SportsIcon/>Sport: {this.state.event.sports_name}</h4>
 					<h4><LocationOnIcon/>Location: {this.state.event.lat} + {this.state.event.long}</h4>
 					
 					

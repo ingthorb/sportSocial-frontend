@@ -45,6 +45,8 @@ export default class HomePage extends Component {
 				console.log(error);
 			});
 	}
+
+	// TODO: Add query params to the Events so it's searching for only the sport
 	render() {
 		return (
 			<div className='HomePage'>
@@ -58,12 +60,23 @@ export default class HomePage extends Component {
 							for a gym entry. Here you can find a list of sporting events that
 							you can take part of in each city.
 						</p>
+
+						<p>Coming soon:</p>
+						<ul>
+							<li>Sign Up / Sign In via social media or email</li>
+							<li>Filter events based on country when clicking on the country</li>
+							<li>Be able to filter out events based on sports and time</li>
+							<li>Filter Groups based on country</li>
+							<li>Add sports, events and groups</li>
+							<li>Will be location based</li>
+						</ul>
 					</div>
 
 					<div>
 						<h3> Countries where you can find events</h3>
 						<div>
 						<CardDeck>
+						
 						{this.state.countries.map(function(country, idx){
 							return (
 									<Card key={idx} border="secondary" style={{ 'minWidth': '18rem', 'marginBottom': '10px'}}>

@@ -37,6 +37,8 @@ export default class Events extends Component {
 		return format(date, "MMMM do, yyyy H:mma");
 	}
 
+	// TODO: Filter out all events that have already happened
+	// 
 	render() {
  
 		return (

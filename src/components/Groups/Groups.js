@@ -29,6 +29,9 @@ export default class Groups extends Component {
 				console.log(error);
 			});
 	}
+
+	// Add filter criteria for countries
+	
 	render() {
 		return (
 			<div className='Groups'>
