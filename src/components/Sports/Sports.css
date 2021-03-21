@@ -1,3 +1,15 @@
 .root {
 	max-width: 345;
 }
+
+.header-groups {
+	margin-bottom: 50px;
+}
+
+.spinner {
+	display: "flex", "& > * + *";
+}
+
+.Sports-header {
+	text-align: center;
+}
