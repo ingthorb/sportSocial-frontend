@@ -4,6 +4,7 @@ import axiosConfig from "../../utils/Axios/axiosConfig";
 import { format } from "date-fns";
 import Card from 'react-bootstrap/Card';
 import CardDeck from 'react-bootstrap/CardDeck';
+import Button from 'react-bootstrap/Button';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
 export default class Events extends Component {
@@ -36,6 +37,8 @@ export default class Events extends Component {
 		return format(date, "MMMM do, yyyy H:mma");
 	}
 
+	// TODO: Filter out all events that have already happened
+	// 
 	render() {
  
 		return (
@@ -48,12 +51,14 @@ export default class Events extends Component {
 				<Card className="event-card-header">
 					<Card.Body>
 					<Card.Text>
-						Here are all events that are happening around you in the next few days.
+						Here are all events that are happening around you in the next few days. When creating a Event you can make it private so it's an invite only.
 					</Card.Text>
 					</Card.Body>
 				</Card>
 
-
+				{this.state.loading &&( 
+					<CircularProgress className="spinner" /> 
+				)}
 				<CardDeck>
 						{this.state.events.map(function(event, idx){
 							if(event.private){
@@ -67,6 +72,8 @@ export default class Events extends Component {
 												<Card.Text>
 													{event.description}
 												</Card.Text>
+												
+												<Button variant="primary" href={ '/events/' + event.id }>View Event Details</Button>
 											</Card.Body>
 										</Card>
 									)

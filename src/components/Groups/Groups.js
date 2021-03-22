@@ -4,6 +4,7 @@ import axiosConfig from "../../utils/Axios/axiosConfig";
 import Card from 'react-bootstrap/Card';
 import CardDeck from 'react-bootstrap/CardDeck';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import Button from 'react-bootstrap/Button';
 
 
 export default class Groups extends Component {
@@ -28,6 +29,9 @@ export default class Groups extends Component {
 				console.log(error);
 			});
 	}
+
+	// Add filter criteria for countries
+	
 	render() {
 		return (
 			<div className='Groups'>
@@ -36,9 +40,12 @@ export default class Groups extends Component {
 				</header>
 				<div>
 					<h4 className="header-groups">
-						Here are all groups that are available, to view the group click on the card.
+						Here are all groups that are available, to view the group click on the card.When creating a Group you can make it private so it's an invite only.
 					</h4>
 				</div>
+				{this.state.loading &&( 
+					<CircularProgress className="spinner" /> 
+				)}
 				<CardDeck>
 					{this.state.groups.map(function(group, idx){
 						return (
@@ -50,6 +57,7 @@ export default class Groups extends Component {
 										<Card.Text>
 											{group.description}
 										</Card.Text>
+										<Button variant="primary" href={ '/groups/' + group.id }>See Details</Button>
 									</Card.Body>
 								</Card>
 							)
