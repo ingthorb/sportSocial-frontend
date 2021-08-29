@@ -10,11 +10,11 @@ export default class SportDetails extends Component {
 	componentDidMount() {
 		axiosConfig
 			.get(`/sports/${this.props.match.params.id}`)
-			.then(res => {
+			.then((res) => {
 				const sport = res.data.results;
 				this.setState({ sport });
 			})
-			.catch(error => {
+			.catch((error) => {
 				console.log(error);
 			});
 		// Create a modal for creating a new sport

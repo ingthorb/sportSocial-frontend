@@ -1,15 +1,14 @@
 import React, { Component } from "react";
 import "./HomePage.css";
-import Button from 'react-bootstrap/Button';
+import Button from "react-bootstrap/Button";
 import axiosConfig from "../../utils/Axios/axiosConfig";
-import Card from 'react-bootstrap/Card';
-import CardDeck from 'react-bootstrap/CardDeck';
+import Card from "react-bootstrap/Card";
+import CardDeck from "react-bootstrap/CardDeck";
 
 export default class HomePage extends Component {
 	constructor(props) {
 		super(props);
-		this.state = { users: 0,
-						countries: [] };
+		this.state = { users: 0, countries: [] };
 	}
 	componentDidMount() {
 		// let users = this.users;
@@ -23,12 +22,12 @@ export default class HomePage extends Component {
 	listOfCountries() {
 		axiosConfig
 			.get(`/countries/`)
-			.then(res => {
+			.then((res) => {
 				const countries = res.data.results;
 				this.setState({ countries });
 				console.log(countries);
 			})
-			.catch(error => {
+			.catch((error) => {
 				console.log(error);
 			});
 	}
@@ -36,12 +35,12 @@ export default class HomePage extends Component {
 	listOfUsers() {
 		axiosConfig
 			.get(`/users/`)
-			.then(res => {
+			.then((res) => {
 				const usersList = res.data.results;
 				let users = usersList.length;
-				this.setState({ users })
+				this.setState({ users });
 			})
-			.catch(error => {
+			.catch((error) => {
 				console.log(error);
 			});
 	}
@@ -60,34 +59,32 @@ export default class HomePage extends Component {
 							for a gym entry. Here you can find a list of sporting events that
 							you can take part of in each city.
 						</p>
-
-						<p>Coming soon:</p>
-						<ul>
-							<li>Sign Up / Sign In via social media or email</li>
-							<li>Filter events based on country when clicking on the country</li>
-							<li>Be able to filter out events based on sports and time</li>
-							<li>Filter Groups based on country</li>
-							<li>Add sports, events and groups</li>
-							<li>Will be location based</li>
-						</ul>
 					</div>
 
 					<div>
 						<h3> Countries where you can find events</h3>
 						<div>
-						<CardDeck>
-						
-						{this.state.countries.map(function(country, idx){
-							return (
-									<Card key={idx} border="secondary" style={{ 'minWidth': '18rem', 'marginBottom': '10px'}}>
-										<Card.Body>
-											<Card.Title>{country.name}</Card.Title>
-											<Button variant="primary" href="/events/">Find Events</Button>
-										</Card.Body>
-									</Card>
-								)
-							})}
-					</CardDeck>
+							<CardDeck>
+								{this.state.countries.map(function (country, idx) {
+									return (
+										<Card
+											key={idx}
+											border='secondary'
+											style={{ minWidth: "18rem", marginBottom: "10px" }}
+										>
+											<Card.Body>
+												<Card.Title>{country.name}</Card.Title>
+												<Button
+													variant='primary'
+													href={`/country/${country.id}`}
+												>
+													Find Events
+												</Button>
+											</Card.Body>
+										</Card>
+									);
+								})}
+							</CardDeck>
 						</div>
 					</div>
 				</div>

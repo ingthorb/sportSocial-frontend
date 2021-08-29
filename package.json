@@ -26,6 +26,7 @@
 	"scripts": {
 		"start": "react-scripts start",
 		"build": "react-scripts build",
+		"build:local": "env-cmd -f .env react-scripts build",
 		"build:dev": "env-cmd -f .env.development react-scripts build",
 		"build:prod": "env-cmd -f .env.production npm run build-css && react-scripts build",
 		"test": "react-scripts test",
